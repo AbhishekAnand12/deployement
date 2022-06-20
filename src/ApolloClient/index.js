@@ -1,0 +1,22 @@
+export { default as client } from './Apolloclient';
+export {
+  GET_ALL_USERS,
+  GET_ALL_BATCHS,
+  GETBATCHBYID,
+  GETTCBATCHBYID,
+  BATCHDATA,
+  SELECTBATCHDATA,
+  GETFEEDBACKBYTRAINEEID,
+} from './query';
+export { GET_REVIEWER_TRAINEES, USERPROFILEDATA } from './query';
+export {
+  CREATE_USER,
+  DELETE_BATCH,
+  DELETE_USER,
+  UPDATE_BATCH,
+  UPDATE_USER,
+  ADD_BULK_USERS,
+  CREATE_BATCH,
+  GOOGLE_LOGIN,
+  ADD_FEEDBACK,
+} from './mutation';
