@@ -11,7 +11,7 @@ import AddBatch from '../Pages/AddBatch/addBatch';
 const Trainee = lazy(() => import('../Pages/Trainee/trainee'));
 const Login = lazy(() => import('../Pages/Login/login'));
 const AddFeedbackFullpage = lazy(() => import('../Pages/AddFeedback/AddFeedbackFullPage'));
-const Reviewer = lazy(() => import('../Pages/Reviewer/reviewer'));
+const Reviewer = lazy(() => import('../Pages/Reviewer/ReviewerTableColumns'));
 const AddFeedback = lazy(() => import('../Pages/Trainee/addFeedback'));
 const NoMatch = lazy(() => import('../Pages/NoMatchFound/noMatchFound'));
 const Coordinator = lazy(() => import('../Pages/TrainingCo-ordinator/CoordinatorTableColumns'));

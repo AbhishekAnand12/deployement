@@ -21,7 +21,8 @@ import {
   USERPROFILEDATA,
 } from '../../ApolloClient';
 import {
-  initialState, validationSchema, Item, hasErrors, hasTouched,
+  initialState, validationSchema, Item,
+  hasErrors, hasTouched,
 } from './helper';
 
 const AddFeedBack = (props) => {
@@ -244,6 +245,7 @@ const AddFeedBack = (props) => {
 
   const startDate1 = combinedData?.getAddFeedbackData?.startDate;
   const endDate1 = combinedData?.getAddFeedbackData?.endDate;
+
   const getDaysBetweenDates = (startDate, endDate) => {
     const now = startDate;
     const dates = [];
@@ -268,7 +270,6 @@ const AddFeedBack = (props) => {
 
     return temp;
   });
-
   const [addedFeedbackData, { loadings, Errors }] = useMutation(ADD_FEEDBACK);
 
   if (loadings) return 'Fetching....';
@@ -284,31 +285,31 @@ const AddFeedBack = (props) => {
           givenBy: reviewerId,
           rating: [
             {
-              question: 'Code_Quality',
+              question: 'codeQuality',
               answer: codeQuality,
             },
             {
-              question: 'Communication',
+              question: 'communication',
               answer: communication,
             },
             {
-              question: 'Behaviour',
+              question: 'behaviour',
               answer: behaviour,
             },
             {
-              question: 'Task_Delivery',
+              question: 'taskDelivery',
               answer: taskDelivery,
             },
             {
-              question: 'Comprehension',
+              question: 'comprehension',
               answer: comprehension,
             },
             {
-              question: 'Email_Communication',
+              question: 'emailCommunication',
               answer: emailCommunication,
             },
             {
-              question: 'Redmine',
+              question: 'redmine',
               answer: redmine,
             },
           ],
@@ -335,8 +336,9 @@ const AddFeedBack = (props) => {
         native
         id="grouped-native-select"
       >
+        <option>Please Select</option>
         {(data === 'reviewer') ? reviewerTrainees.map((option) => (
-          <option value={option.originalId}>
+          <option value={option?.assignedTrainees?.originalId}>
             {option?.assignedTrainees?.name}
           </option>
         )) : trainees.map((option) => (

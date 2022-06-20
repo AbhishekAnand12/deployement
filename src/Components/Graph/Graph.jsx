@@ -11,6 +11,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import options from './constant';
 
 ChartJS.register(
   CategoryScale,
@@ -28,7 +29,7 @@ const Graph = (props) => {
     datasets: [
       {
         label: 'Email Communication',
-        data: data.map((id) => id.behaviour),
+        data: data.map((id) => id.emailCommunication),
         backgroundColor: 'rgb(104, 102, 0)',
       },
       {
@@ -38,7 +39,7 @@ const Graph = (props) => {
       },
       {
         label: 'Code Quality',
-        data: data.map((id) => id.codequality),
+        data: data.map((id) => id.codeQuality),
         backgroundColor: 'rgb(128, 0, 255)',
       },
       {
@@ -53,7 +54,7 @@ const Graph = (props) => {
       },
       {
         label: 'Task Delivery',
-        data: data.map((id) => id.taskdelivery),
+        data: data.map((id) => id.taskDelivery),
         backgroundColor: 'rgb(196, 192, 192)',
       },
       {
@@ -64,13 +65,7 @@ const Graph = (props) => {
     ],
   };
 
-  return (
-    <Bar
-      data={Data}
-      width="500px"
-      margin="auto"
-    />
-  );
+  return <Bar options={options} data={Data} width="500px" margin="auto" />;
 };
 
 Graph.propTypes = {

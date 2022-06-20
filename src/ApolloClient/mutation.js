@@ -1,34 +1,34 @@
 import { gql } from '@apollo/client';
 
 export const CREATE_USER = gql`
-mutation AddBatch($input: BatchData) {
-  addBatch(input: $input) {
-    userArray {
-      email
-      name
-      department
-      contactNo
-      location
-      empId
-    }
-    data {
-      originalId
-      batchName
-      startDate
-      endDate
-      count
-      trainers
-      reviewers {
-        assignedTrainees
-        reviewer
+  mutation AddBatch($input: BatchData) {
+    addBatch(input: $input) {
+      userArray {
+        email
+        name
+        department
+        contactNo
+        location
+        empId
       }
-      coordinators
-      feedbackTriningCoordinator
-      feedbackReviewer
-      feedbackTrainee
+      data {
+        originalId
+        batchName
+        startDate
+        endDate
+        count
+        trainers
+        reviewers {
+          assignedTrainees
+          reviewer
+        }
+        coordinators
+        feedbackTriningCoordinator
+        feedbackReviewer
+        feedbackTrainee
+      }
     }
   }
-}
 `;
 
 export const DELETE_USER = gql`
@@ -106,34 +106,34 @@ export const ADD_BULK_USERS = gql`
 `;
 
 export const CREATE_BATCH = gql`
-mutation AddBatch($input: BatchData) {
-  addBatch(input: $input) {
-    userArray {
-      email
-      name
-      department
-      contactNo
-      location
-      empId
-    }
-    data {
-      originalId
-      batchName
-      startDate
-      endDate
-      count
-      trainers
-      reviewers {
-        assignedTrainees
-        reviewer
+  mutation AddBatch($input: BatchData) {
+    addBatch(input: $input) {
+      userArray {
+        email
+        name
+        department
+        contactNo
+        location
+        empId
       }
-      coordinators
-      feedbackTriningCoordinator
-      feedbackReviewer
-      feedbackTrainee
+      data {
+        originalId
+        batchName
+        startDate
+        endDate
+        count
+        trainers
+        reviewers {
+          assignedTrainees
+          reviewer
+        }
+        coordinators
+        feedbackTriningCoordinator
+        feedbackReviewer
+        feedbackTrainee
+      }
     }
   }
-}
 `;
 
 export const GOOGLE_LOGIN = gql`
@@ -146,39 +146,39 @@ export const GOOGLE_LOGIN = gql`
 `;
 
 export const ADD_FEEDBACK = gql`
-    mutation AddedFeedbackData($input: Feedbacks) {
-      addedFeedbackData(input: $input) {
-        data {
-          batchId
-          week
-          originalId
-          givenFor
-          createdAt
-          givenBy
-          rating {
-            question
-            answer
-          }
-          goodPoints
-          improvementRequired
+  mutation AddedFeedbackData($input: Feedbacks) {
+    addedFeedbackData(input: $input) {
+      data {
+        batchId
+        week
+        createdAt
+        originalId
+        givenFor
+        givenBy
+        rating {
+          question
+          answer
         }
+        goodPoints
+        improvementRequired
       }
-    }
-  `;
-
-export const ADD_TRAINER_FEEDBACK = gql`
-mutation AddedFeedbackData($input: Feedbacks) {
-  addedFeedbackData(input: $input) {
-    data {
-      week
-      givenFor
-      givenBy
-      rating {
-        question
-        answer
-      }
-      description
     }
   }
-}
+`;
+
+export const ADD_TRAINER_FEEDBACK = gql`
+  mutation AddedFeedbackData($input: Feedbacks) {
+    addedFeedbackData(input: $input) {
+      data {
+        week
+        givenFor
+        givenBy
+        rating {
+          question
+          answer
+        }
+        description
+      }
+    }
+  }
 `;
